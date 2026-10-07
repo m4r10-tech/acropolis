@@ -160,4 +160,41 @@ if (reduced || !('IntersectionObserver' in window)) {
   reveals.forEach((el) => io.observe(el));
 }
 
+/* ---------- Números que suben al aparecer en pantalla ---------- */
+const counters = $$('.count');
+const COUNT_MS = 1600;
+const easeOut = (t) => 1 - (1 - t) ** 3;
+
+function runCounter(el) {
+  const to = Number(el.dataset.to);
+  const nf = new Intl.NumberFormat('es-ES', {
+    minimumFractionDigits: Number(el.dataset.dec || 0),
+    maximumFractionDigits: Number(el.dataset.dec || 0),
+  });
+  const final = el.textContent;
+  // Fija el ancho final para que el texto de alrededor no baile
+  el.style.minWidth = `${el.getBoundingClientRect().width}px`;
+  el.textContent = nf.format(0);
+  const start = performance.now();
+  const step = (now) => {
+    const t = Math.min(1, Math.max(0, (now - start) / COUNT_MS));
+    el.textContent = t < 1 ? nf.format(to * easeOut(t)) : final;
+    if (t < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+
+if (!reduced && 'IntersectionObserver' in window) {
+  const co = new IntersectionObserver((entries) => {
+    entries.forEach((en) => {
+      if (en.isIntersecting) {
+        runCounter(en.target);
+        co.unobserve(en.target);
+      }
+    });
+  }, { threshold: 1 });
+  // Se espera a la tipografía para medir bien el ancho final
+  document.fonts.ready.then(() => counters.forEach((el) => co.observe(el)));
+}
+
 $('#year').textContent = String(new Date().getFullYear());

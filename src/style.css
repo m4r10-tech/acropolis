@@ -198,7 +198,7 @@ p { margin: 0 0 1em; }
 }
 .hero__facts li { display: flex; flex-direction: column; }
 .hero__facts strong { font: 1.6rem/1.1 var(--serif); color: var(--gold); }
-.hero__facts span { font-size: .9rem; color: rgb(255 255 255 / .8); }
+.hero__facts li > span { font-size: .9rem; color: rgb(255 255 255 / .8); }
 
 /* Greca griega: guiño al nombre */
 .meander {
@@ -367,6 +367,9 @@ p { margin: 0 0 1em; }
 .lightbox__close { top: 16px; right: 16px; }
 .lightbox__prev { left: 16px; top: 50%; transform: translateY(-50%); }
 .lightbox__next { right: 16px; top: 50%; transform: translateY(-50%); }
+
+/* Contadores */
+.count { display: inline-block; text-align: right; font-variant-numeric: lining-nums tabular-nums; }
 
 /* Aparición */
 .js .reveal { opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s ease; }
