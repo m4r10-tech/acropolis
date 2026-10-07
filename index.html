@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Restaurante Acrópolis · Cocina española en Toledo</title>
+  <meta name="description" content="Restaurante Acrópolis, Calle de Dublín 6, Toledo. Pulpo a la brasa, setas empanadas, carnes, mariscos y postres caseros. Terraza de temporada. Reservas: 925 22 62 38." />
+  <meta name="theme-color" content="#17306b" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+  <meta property="og:type" content="restaurant" />
+  <meta property="og:title" content="Restaurante Acrópolis · Toledo" />
+  <meta property="og:description" content="Cocina española de siempre: pulpo a la brasa, setas, carnes y mariscos. Calle de Dublín 6, Toledo." />
+  <meta property="og:image" content="/og-image.jpg" />
+  <meta property="og:locale" content="es_ES" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Young+Serif&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="/fotos/comedor-salon.webp" media="(min-width: 701px)" />
+  <link rel="preload" as="image" href="/fotos/comedor-salon-sm.webp" media="(max-width: 700px)" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Restaurante Acrópolis",
+    "image": "/og-image.jpg",
+    "servesCuisine": ["Española", "Mediterránea"],
+    "priceRange": "20-30 €",
+    "telephone": "+34925226238",
+    "acceptsReservations": "True",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Calle de Dublín, 6",
+      "postalCode": "45003",
+      "addressLocality": "Toledo",
+      "addressCountry": "ES"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 39.8743804, "longitude": -4.0279886 },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "12:00", "closes": "17:30" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "12:00", "closes": "17:30" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "20:30", "closes": "23:59" }
+    ],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.4", "reviewCount": "810" }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+
+  <!-- Banner de estado: se rellena desde src/horario.js -->
+  <div class="status" id="status" data-state="loading" role="status" aria-live="polite">
+    <div class="status__inner">
+      <span class="status__dot" aria-hidden="true"></span>
+      <p class="status__text" id="status-text">Comprobando horario…</p>
+      <a class="status__link" href="#horario">Ver horario</a>
+    </div>
+  </div>
+
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="brand" href="#inicio" aria-label="Restaurante Acrópolis, inicio">
+        <span class="brand__mark" aria-hidden="true">A</span>
+        <span class="brand__name">Acrópolis</span>
+      </a>
+      <button type="button" class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+        <span class="sr-only">Abrir menú</span>
+        <span class="nav__bars" aria-hidden="true"></span>
+      </button>
+      <nav class="nav__menu" id="nav-menu" aria-label="Principal">
+        <a href="#casa">La casa</a>
+        <a href="#platos">Platos</a>
+        <a href="#galeria">Fotos</a>
+        <a href="#opiniones">Opiniones</a>
+        <a href="#horario">Horario</a>
+        <a class="btn btn--small btn--gold" href="tel:+34925226238">Reservar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <picture class="hero__bg">
+        <source media="(max-width: 700px)" srcset="/fotos/comedor-salon-sm.webp" />
+        <img src="/fotos/comedor-salon.webp" alt="Comedor del Restaurante Acrópolis con mesas de mantel blanco y suelo ajedrezado" fetchpriority="high" />
+      </picture>
+      <div class="hero__content">
+        <p class="eyebrow eyebrow--light">Calle de Dublín 6 · Toledo</p>
+        <h1 class="hero__title">Acrópolis</h1>
+        <p class="hero__lead">Cocina española de siempre: pulpo a la brasa, setas, buenas carnes y marisco. Mesa con mantel, trato cercano y precio justo.</p>
+        <div class="hero__actions">
+          <a class="btn btn--gold" href="tel:+34925226238">Llamar · 925&nbsp;22&nbsp;62&nbsp;38</a>
+          <a class="btn btn--ghost" href="#platos">Ver los platos</a>
+        </div>
+        <ul class="hero__facts">
+          <li><strong>4,4 ★</strong><span>810 reseñas en Google</span></li>
+          <li><strong>20–30 €</strong><span>por persona</span></li>
+          <li><strong>Terraza</strong><span>de temporada</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="meander" aria-hidden="true"></div>
+
+    <!-- LA CASA -->
+    <section class="section casa" id="casa">
+      <div class="wrap casa__grid">
+        <div class="casa__text reveal">
+          <p class="eyebrow">La casa</p>
+          <h2>Un comedor de barrio con cocina de las de antes</h2>
+          <p>En el Acrópolis se viene a comer bien y sin prisas. Una carta amplia de raciones para compartir, carnes y pescados, un menú diario a mediodía y postres caseros para terminar.</p>
+          <p>El comedor es recogido, en blanco y azul, y casi siempre está lleno. Cuando acompaña el tiempo se abre una amplia terraza. Si venís en grupo o el fin de semana, mejor llamar antes.</p>
+          <ul class="ticks">
+            <li>Comer en el local</li>
+            <li>Para llevar</li>
+            <li>Reserva por teléfono</li>
+          </ul>
+        </div>
+        <figure class="casa__photo reveal">
+          <img src="/fotos/fachada.webp" alt="Fachada del Restaurante Acrópolis en la Calle de Dublín, con barril en la entrada" loading="lazy" width="1400" height="1050" />
+          <figcaption>La entrada, en la Calle de Dublín 6.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- PLATOS -->
+    <section class="section platos" id="platos">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <p class="eyebrow">Lo que más se pide</p>
+          <h2>Platos de la casa</h2>
+          <p class="section__sub">Una muestra de la carta, con fotos hechas por clientes. La carta completa y los precios, en el restaurante.</p>
+        </header>
+
+        <div class="stars">
+          <article class="star reveal">
+            <img src="/fotos/pulpo-brasa.webp" alt="Pulpo a la brasa con patata y alioli" loading="lazy" width="1050" height="1400" />
+            <div class="star__body">
+              <span class="tag">El favorito</span>
+              <h3>Pulpo a la brasa</h3>
+              <p>Tostado por fuera y tierno por dentro, con patata cocida y alioli. Es el plato que más aparece en las reseñas.</p>
+            </div>
+          </article>
+          <article class="star reveal">
+            <img src="/fotos/setas-empanadas.webp" alt="Ración de setas empanadas con alioli en el centro" loading="lazy" width="1050" height="1400" />
+            <div class="star__body">
+              <span class="tag">Para compartir</span>
+              <h3>Setas empanadas</h3>
+              <p>Crujientes, con su alioli en medio del plato. La ración que todo el mundo recomienda pedir al centro.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="filters" role="group" aria-label="Filtrar platos">
+          <button type="button" class="chip is-active" aria-pressed="true" data-filter="todos">Todos</button>
+          <button type="button" class="chip" aria-pressed="false" data-filter="mar">Del mar</button>
+          <button type="button" class="chip" aria-pressed="false" data-filter="brasa">Carnes</button>
+          <button type="button" class="chip" aria-pressed="false" data-filter="raciones">Raciones</button>
+          <button type="button" class="chip" aria-pressed="false" data-filter="postres">Postres caseros</button>
+        </div>
+
+        <ul class="dishes" id="dishes">
+          <li class="dish" data-cat="brasa">
+            <img src="/fotos/entrecot-sm.webp" alt="Entrecot a la brasa en lonchas con patatas y pimientos" loading="lazy" width="720" height="542" />
+            <h3>Entrecot</h3><p>A la brasa, con patatas fritas y pimientos.</p>
+          </li>
+          <li class="dish" data-cat="brasa">
+            <img src="/fotos/paletilla-cordero-sm.webp" alt="Paletilla de cordero asada con su jugo y patatas" loading="lazy" width="720" height="540" />
+            <h3>Paletilla de cordero</h3><p>Asada en su jugo, con patatas a lo pobre.</p>
+          </li>
+          <li class="dish" data-cat="brasa">
+            <img src="/fotos/chuleta-pimientos-sm.webp" alt="Chuleta a la brasa con patatas y pimientos de Padrón" loading="lazy" width="720" height="698" />
+            <h3>Chuleta con pimientos</h3><p>Carne a la brasa con pimientos de Padrón.</p>
+          </li>
+          <li class="dish" data-cat="mar">
+            <img src="/fotos/gambas-plancha-sm.webp" alt="Gambas a la plancha con medio limón" loading="lazy" width="720" height="542" />
+            <h3>Gambas a la plancha</h3><p>Con sal gorda y limón.</p>
+          </li>
+          <li class="dish" data-cat="mar">
+            <img src="/fotos/zamburinas-sm.webp" alt="Zamburiñas a la plancha en su concha" loading="lazy" width="540" height="720" />
+            <h3>Zamburiñas</h3><p>A la plancha, en su concha.</p>
+          </li>
+          <li class="dish" data-cat="mar">
+            <img src="/fotos/almejas-sm.webp" alt="Almejas en salsa en un plato hondo" loading="lazy" width="720" height="540" />
+            <h3>Almejas</h3><p>En su salsa, para mojar pan.</p>
+          </li>
+          <li class="dish" data-cat="mar">
+            <img src="/fotos/pescado-gratinado-sm.webp" alt="Pescado gratinado con patata y puerro frito" loading="lazy" width="540" height="720" />
+            <h3>Pescado gratinado</h3><p>Con patata cocida y puerro crujiente.</p>
+          </li>
+          <li class="dish" data-cat="raciones">
+            <img src="/fotos/huevos-rotos-gulas-sm.webp" alt="Huevos rotos con gulas sobre patatas fritas" loading="lazy" width="540" height="720" />
+            <h3>Huevos rotos con gulas</h3><p>Patatas, huevos fritos con puntilla y gulas.</p>
+          </li>
+          <li class="dish" data-cat="raciones">
+            <img src="/fotos/tomate-ventresca-sm.webp" alt="Tomate en rodajas con ventresca, anchoas y cebolla" loading="lazy" width="720" height="540" />
+            <h3>Tomate con ventresca</h3><p>Con anchoas y cebolla picada.</p>
+          </li>
+          <li class="dish" data-cat="raciones">
+            <img src="/fotos/setas-huevo-sm.webp" alt="Setas salteadas con huevo" loading="lazy" width="720" height="540" />
+            <h3>Setas con huevo</h3><p>Salteadas, con huevo por encima.</p>
+          </li>
+          <li class="dish" data-cat="postres">
+            <img src="/fotos/tarta-queso-sm.webp" alt="Porción de tarta de queso con nata y caramelo" loading="lazy" width="540" height="720" />
+            <h3>Tarta de queso</h3><p>Casera, con nata y caramelo.</p>
+          </li>
+          <li class="dish" data-cat="postres">
+            <img src="/fotos/tiramisu-sm.webp" alt="Tiramisú con cacao, nata y sirope de chocolate" loading="lazy" width="540" height="720" />
+            <h3>Tiramisú</h3><p>Casero, con cacao y chocolate.</p>
+          </li>
+        </ul>
+
+        <aside class="also reveal">
+          <h3>También en la carta</h3>
+          <p>Perdiz a la toledana, arroces, más carnes y mariscos. Y a mediodía, <strong>menú diario</strong>: pregunta por los platos del día.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section class="section galeria" id="galeria">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <p class="eyebrow">Fotos reales</p>
+          <h2>El local y la mesa</h2>
+        </header>
+        <div class="gallery" id="gallery">
+          <button type="button" class="gallery__item g-wide" data-full="/fotos/comedor.webp"><img src="/fotos/comedor-sm.webp" alt="Comedor con cuadros de colores y lámparas de globo" loading="lazy" /></button>
+          <button type="button" class="gallery__item g-tall" data-full="/fotos/pulpo-brasa.webp"><img src="/fotos/pulpo-brasa-sm.webp" alt="Pulpo a la brasa" loading="lazy" /></button>
+          <button type="button" class="gallery__item" data-full="/fotos/zamburinas.webp"><img src="/fotos/zamburinas-sm.webp" alt="Zamburiñas" loading="lazy" /></button>
+          <button type="button" class="gallery__item" data-full="/fotos/entrecot.webp"><img src="/fotos/entrecot-sm.webp" alt="Entrecot a la brasa" loading="lazy" /></button>
+          <button type="button" class="gallery__item g-wide" data-full="/fotos/comedor-salon.webp"><img src="/fotos/comedor-salon-sm.webp" alt="Salón principal con suelo ajedrezado" loading="lazy" /></button>
+          <button type="button" class="gallery__item" data-full="/fotos/almejas.webp"><img src="/fotos/almejas-sm.webp" alt="Almejas en salsa" loading="lazy" /></button>
+          <button type="button" class="gallery__item" data-full="/fotos/gambas-plancha.webp"><img src="/fotos/gambas-plancha-sm.webp" alt="Gambas a la plancha" loading="lazy" /></button>
+          <button type="button" class="gallery__item" data-full="/fotos/tarta-queso.webp"><img src="/fotos/tarta-queso-sm.webp" alt="Tarta de queso casera" loading="lazy" /></button>
+          <button type="button" class="gallery__item" data-full="/fotos/fachada.webp"><img src="/fotos/fachada-sm.webp" alt="Fachada del restaurante" loading="lazy" /></button>
+        </div>
+        <p class="credit">Fotos publicadas por clientes en Google Maps.</p>
+      </div>
+    </section>
+
+    <!-- OPINIONES -->
+    <section class="section opiniones" id="opiniones">
+      <div class="wrap">
+        <header class="section__head section__head--light reveal">
+          <p class="eyebrow eyebrow--light">Lo que dicen</p>
+          <h2>4,4 de media en 810 reseñas</h2>
+        </header>
+        <div class="quotes">
+          <blockquote class="quote reveal">
+            <p>«Calidad-precio en Toledo no le supera nadie. Servicio y trato espectacular, de 10.»</p>
+            <cite>Jorge O. · Google</cite>
+          </blockquote>
+          <blockquote class="quote reveal">
+            <p>«La comida excelente, recomendamos la ración de setas y el pulpo a la brasa.»</p>
+            <cite>Reseña destacada · Google</cite>
+          </blockquote>
+          <blockquote class="quote reveal">
+            <p>«A destacar las carnes y la perdiz a la toledana. Los postres caseros están muy buenos.»</p>
+            <cite>Mapno · Google</cite>
+          </blockquote>
+          <blockquote class="quote reveal">
+            <p>«Fuimos sin reserva y la camarera nos atendió muy bien. Un 10 por el personal.»</p>
+            <cite>Conchi G. · Google</cite>
+          </blockquote>
+        </div>
+        <a class="btn btn--ghost reveal" href="https://www.google.com/maps?cid=18320694542432313434" target="_blank" rel="noopener" id="reviews-link">Leer más reseñas en Google</a>
+      </div>
+    </section>
+
+    <!-- HORARIO Y CONTACTO -->
+    <section class="section horario" id="horario">
+      <div class="wrap horario__grid">
+        <div class="reveal">
+          <p class="eyebrow">Horario</p>
+          <h2>Cuándo venir</h2>
+
+          <div class="today" id="today" data-state="loading">
+            <p class="today__label" id="today-label">Hoy</p>
+            <div class="timeline" id="timeline" aria-hidden="true">
+              <div class="timeline__track" id="timeline-track"></div>
+              <div class="timeline__now" id="timeline-now"></div>
+              <div class="timeline__scale"><span>12:00</span><span>18:00</span><span>24:00</span></div>
+            </div>
+            <p class="today__msg" id="today-msg"></p>
+          </div>
+
+          <table class="week" id="week">
+            <caption class="sr-only">Horario semanal</caption>
+            <tbody></tbody>
+          </table>
+          <p class="note">Horario de Google Maps. En festivos el horario puede cambiar: ante la duda, llama.</p>
+        </div>
+
+        <div class="contact reveal">
+          <div class="map">
+            <iframe
+              title="Mapa: Restaurante Acrópolis, Calle de Dublín 6, Toledo"
+              src="https://www.google.com/maps?q=Restaurante+Acr%C3%B3polis,+Calle+de+Dubl%C3%ADn+6,+45003+Toledo&z=16&output=embed"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <dl class="contact__list">
+            <div><dt>Dirección</dt><dd>Calle de Dublín, 6<br />45003 Toledo</dd></div>
+            <div><dt>Teléfono y reservas</dt><dd><a href="tel:+34925226238">925&nbsp;22&nbsp;62&nbsp;38</a></dd></div>
+            <div><dt>Precio medio</dt><dd>20–30 € por persona</dd></div>
+          </dl>
+          <div class="contact__actions">
+            <a class="btn btn--navy" href="tel:+34925226238">Llamar para reservar</a>
+            <a class="btn btn--outline" href="https://www.google.com/maps/dir/?api=1&destination=Restaurante+Acr%C3%B3polis+Calle+de+Dubl%C3%ADn+6+Toledo" target="_blank" rel="noopener">Cómo llegar</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <div>
+        <p class="footer__brand">Acrópolis</p>
+        <p>Restaurante · Calle de Dublín 6 · 45003 Toledo</p>
+      </div>
+      <p><a href="tel:+34925226238">925&nbsp;22&nbsp;62&nbsp;38</a></p>
+      <p class="footer__small">© <span id="year">2026</span> Restaurante Acrópolis</p>
+    </div>
+  </footer>
+
+  <a class="fab" href="tel:+34925226238" aria-label="Llamar al restaurante">
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+  </a>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Foto ampliada">
+    <button type="button" class="lightbox__close" data-lb="close" aria-label="Cerrar">×</button>
+    <button type="button" class="lightbox__nav lightbox__prev" data-lb="prev" aria-label="Foto anterior">‹</button>
+    <img id="lightbox-img" alt="" />
+    <button type="button" class="lightbox__nav lightbox__next" data-lb="next" aria-label="Foto siguiente">›</button>
+    <p class="lightbox__cap" id="lightbox-cap"></p>
+  </dialog>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
